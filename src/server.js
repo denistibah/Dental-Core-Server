@@ -16,9 +16,8 @@ app.use('/api/patients', require('./routes/patient.routes'));
 app.use('/api/appointments', require('./routes/appointment.routes'));
 app.use('/api/auth', require('./routes/auth.routes'));
 
-app.get('/hello', (req, res) => res.send('Denta API Running'));
+app.get('/', (req, res) => res.send('Denta API Running'));
 
 
 const PORT = process.env.PORT || 5000;
-// app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-module.exports = app; // Export the app for testing
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
